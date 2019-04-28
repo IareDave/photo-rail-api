@@ -1,7 +1,7 @@
 require 'rails/application_controller'
 
-class StaticController < Rails::ApplicationController
+class StaticController < ApplicationController::Base
   def index
-    render file: Rails.root.join('public', 'new.html.erb')
+    # render file: 'public/new.html.erb'
   end
 end
