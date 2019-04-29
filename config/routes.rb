@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :pictures
   get 'uploads/new'
   get 'uploads/create'
   get 'uploads/index'
