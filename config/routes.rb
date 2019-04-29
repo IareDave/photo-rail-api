@@ -1,13 +1,12 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :pictures
   get 'uploads/new'
   get 'uploads/create'
   get 'uploads/index'
   # RESTful routes
+  resources :pictures, except: %i[new edit]
   resources :examples, except: %i[new edit]
-  resources :uploads
   # Custom routes
   root 'uploads#new'
   post '/sign-up' => 'users#signup'
