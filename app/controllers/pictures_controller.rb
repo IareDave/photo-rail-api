@@ -3,14 +3,14 @@ class PicturesController < ProtectedController
 
   # GET /pictures
   def index
-    @pictures = Picture.all
+    @pictures = current_user.pictures.all
 
     render json: @pictures
   end
 
   # GET /pictures/1
   def show
-    @picture = Picture.find(params[:id])
+    @picture = current_user.pictures.find(params[:id])
     render json: @picture
   end
 
