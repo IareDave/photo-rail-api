@@ -1,4 +1,4 @@
-<% project_name = 'photo-rail-api' %>
+<% project_name = 'photo-rails-backend' %>
 
 default: &default
   adapter: postgresql
