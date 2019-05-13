@@ -1,5 +1,5 @@
 class PicturesController < ProtectedController
-  before_action :set_picture, only: %i[update, destroy]
+  before_action :set_picture, only: %i[show, update, destroy]
 
   # GET /pictures
   def index
@@ -27,6 +27,7 @@ class PicturesController < ProtectedController
 
   # PATCH/PUT /pictures/1
   def update
+    @picture = current_user.pictures.find(params[:id])
     if @picture.update(picture_params)
       render json: @picture
     else
@@ -47,6 +48,6 @@ class PicturesController < ProtectedController
 
     # Only allow a trusted parameter "white list" through.
     def picture_params
-      params.require(:picture).permit(:user, :url, :user_id)
+      params.require(:picture).permit(:url, :user_id)
     end
 end

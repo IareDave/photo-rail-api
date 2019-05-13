@@ -3,11 +3,10 @@
 curl "http://localhost:4741/pictures" \
   --include \
   --request POST \
-  --header "Authorization: Token token=${TOKEN}" \
   --header "Content-Type: application/json" \
+  --header "Authorization: Token token=${TOKEN}" \
   --data '{
     "picture": {
-      "name": "'"${NAME}"'",
       "url": "'"${URL}"'"
     }
   }'

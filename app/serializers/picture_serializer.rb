@@ -1,5 +1,5 @@
 class PictureSerializer < ActiveModel::Serializer
-  attributes :id, :user, :url, :owned
+  attributes :id, :url, :owned, :user_id
 
   def owned
     scope == object.user
